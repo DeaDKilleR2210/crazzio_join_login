@@ -1,4 +1,5 @@
 {
+  "homepage": "https://DeaDKilleR2210.github.io/crazzio_join_login",
   "name": "crazzio_login_join",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +13,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "npm run watch:css && react-scripts start",
     "build": "npm run watch:css && react-scripts build",
     "test": "react-scripts test",

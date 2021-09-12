@@ -7,18 +7,23 @@ import next_white from "../Files/right-arrow (white).png"
 import JoinTitle from "./Crazzio_Join_P3_Title";
 
 
-const JoinUsername = () =>{
+const JoinUsername = (props) =>{
 
-    const [enteredtitle, setEnteredtitle] = useState("")
+    const [enteredusername, setEnteredusername] = useState("")
 
     const onchangetitle = (event) =>{
-        setEnteredtitle(event.target.value)
+        setEnteredusername(event.target.value)
+        
     }
-
+    
+    const infoListObject = {...props.infoObject, username:enteredusername}
     const ForwardButton = () =>{
         document.getElementById("Join_Username").style.display = "none"
         document.getElementById("JoinTitle").style.display = "block"
+        console.log(infoListObject)
     }
+
+    
 
     return(
         
@@ -46,7 +51,7 @@ const JoinUsername = () =>{
 
             {/*Next Page for about*/}
             <div id="JoinTitle" className="hidden">
-                <JoinTitle />
+                <JoinTitle infoObject={infoListObject} />
             </div>
         </div>
     )
