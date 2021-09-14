@@ -18,9 +18,15 @@ const JoinUsername = (props) =>{
     
     const infoListObject = {...props.infoObject, username:enteredusername}
     const ForwardButton = () =>{
-        document.getElementById("Join_Username").style.display = "none"
-        document.getElementById("JoinTitle").style.display = "block"
-        console.log(infoListObject)
+        if (enteredusername.length === 0){
+            document.getElementById("uname_input").style.backgroundColor = "rgb(252, 165, 165)"
+            document.getElementById("uname_error").style.display = "block"
+            document.getElementById("uname_error").innerHTML = "Username cannot have 0 characters"
+        }else{
+            document.getElementById("Join_Username").style.display = "none"
+            document.getElementById("JoinTitle").style.display = "block"
+            console.log(infoListObject)
+        }
     }
 
     
@@ -28,17 +34,18 @@ const JoinUsername = (props) =>{
     return(
         
         <div>
-            <div  id="Join_Username" className="h-screen py-6 overflow-scroll bg-gradient-to-b from-transparent to-gray-800 md:py-0 xl:py-8 no-scrollbar">
+            <div  id="Join_Username" className="justify-center h-screen overflow-scroll bg-gradient-to-b from-transparent to-gray-800 md:py-0 xl:py-8 no-scrollbar">
                 
-                <div id="topWebName" class="absolute -mt-4 ">
-                    <p class="z-50 mx-auto font-serif text-4xl font-bold text-center text-gray-900 uppercase max-w-max "><span class="crazzio_hover">C</span><span class="crazzio_hover">r</span><span class="crazzio_hover">a</span><span class="crazzio_hover">z</span><span class="crazzio_hover">z</span><span class="crazzio_hover">i</span><span class="text-red-600 crazzio_o_hover">o</span><span class="text-xl lowercase md:text-3xl xl:text-2xl crazzio_com_hover">.com</span></p>
+                <div id="topWebName" class="my-10">
+                    <p class="z-50 mx-auto font-serif text-6xl font-bold text-center text-gray-900 uppercase max-w-max "><span class="crazzio_hover">C</span><span class="crazzio_hover">r</span><span class="crazzio_hover">a</span><span class="crazzio_hover">z</span><span class="crazzio_hover">z</span><span class="crazzio_hover">i</span><span class="text-red-600 crazzio_o_hover">o</span><span class="text-xl lowercase md:text-3xl xl:text-2xl crazzio_com_hover">.com</span></p>
                 </div>
 
-                <div  className="p-20 mx-auto space-y-6 bg-white rounded-lg shadow-2xl w-110">
+                <div  className="py-10 mx-2 space-y-6 bg-white rounded-lg shadow-2xl md:mx-auto md:max-w-max md:mt-20 sm:mx-5 sm:p-10 md:p-20 md:h-auto lg:p-20 md:w-110">
                     
-                    <p className="text-4xl font-semibold text-center text-gray-900">Give yourself a username</p>
+                    <p className="text-2xl font-semibold text-center text-gray-900 md:text-3xl lg:text-4xl">Give yourself a username</p>
                     <div className="mx-auto max-w-max" >
-                        <input placeholder="Eg. aka1230, yoobro, DeadKiller" type="text" onChange = {onchangetitle} className="h-12 p-2 text-lg font-normal placeholder-gray-500 bg-gray-100 rounded-md outline-none w-100 " />
+                        <input id = "uname_input" placeholder="Eg. aka1230, yoobro, DeadKiller" type="text" onChange = {onchangetitle} className="h-12 p-2 text-lg font-normal placeholder-gray-300 transition-all duration-300 bg-gray-100 rounded-md shadow-md outline-none md:w-100 " />
+                        <p id = "uname_error" class="hidden text-sm  text-red-500 transition-all duration-300"></p>
                     </div>
                     
                     {/*Next Button*/}

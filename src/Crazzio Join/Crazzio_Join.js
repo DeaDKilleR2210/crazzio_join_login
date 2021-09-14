@@ -112,9 +112,9 @@ const App = () => {
         }
         return(
             <div >
-                <div id="Join_Screen" className="h-screen py-6 overflow-scroll bg-gradient-to-b from-transparent to-gray-800 md:py-0 xl:py-8 no-scrollbar">
+                <div id="Join_Screen" className="h-screen overflow-scroll sm:py-6 bg-gradient-to-b from-transparent to-gray-800 md:py-0 xl:py-8 no-scrollbar">
 
-                    <div class="z-50 py-0 bg-black bg-opacity-80 shadow-2xl  mx-16 rounded-lg xl:grid xl:grid-cols-2 ">
+                    <div class="z-50 h-full sm:h-auto py-0 bg-black bg-opacity-80 shadow-2xl  sm:mx-16 sm:rounded-lg xl:grid xl:grid-cols-2 ">
                         
                         {/*Website name*/}
                         <div class="p-4 xl:inline-block xl:mt-72 my-2 2xl:mt-72 max-w-max mx-auto">
@@ -143,7 +143,7 @@ const App = () => {
                                         <input id="PSWD" onChange={inputPSWD} type="password" placeholder="New Password" class="rounded-b-md text-xl text-gray-100 focus:rounded-none  placeholder-gray-400 transition-all duration-500 py-2 px-1 ease-out bg-transparent border-b-2 border-gray-700 outline-none md:w-80  focus:text-gray-100 focus:placeholder-gray-500 lg:w-96" />
                                         <div>
                                             <p onClick={showPSWD} class="inline-block float-left text-sm cursor-pointer hover:text-blue-600 text-gray-500">Show Password</p>
-                                            <p id = "PSWDerror" class="hidden float-right text-sm cursor-pointer text-red-500"></p>
+                                            <p id = "PSWDerror" class="hidden float-right text-sm  text-red-500"></p>
                                         </div>
                                     </div>
 
@@ -151,7 +151,7 @@ const App = () => {
                                         <input id="CPSWD" onChange={inputConfirmPSWD} type="password" placeholder="Confirm Password" class="rounded-b-md text-xl text-gray-100 focus:rounded-none  placeholder-gray-400 transition-all duration-500 py-2 px-1 ease-out bg-transparent border-b-2 border-gray-700 outline-none md:w-80  focus:text-gray-100 focus:placeholder-gray-500 lg:w-96" />
                                         <div>
                                             <p onClick={showConfirmPSWD} class="inline-block float-left text-sm cursor-pointer hover:text-blue-600 text-gray-500">Show Password</p>
-                                            <p id = "ConfirmPSWDerror" class=" hidden float-right text-sm cursor-pointer text-red-500"></p>
+                                            <p id = "ConfirmPSWDerror" class=" hidden float-right text-sm  text-red-500"></p>
                                         </div>
                                     </div>
 
